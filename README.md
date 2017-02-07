@@ -27,7 +27,7 @@ Alexusmai\LaravelPurifier\LaravelPurifierServiceProvider::class,
 And add alias
 
 ``` php
-'Purifier' => Alexusmai\LaravelPurifier\LaravelPurifierFacade::class,
+'Purifier' => Alexusmai\LaravelPurifier\Facades\PurifierFacade::class,
 ```
 
 Publish config file (purifier.php)
