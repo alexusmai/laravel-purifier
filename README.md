@@ -1,5 +1,9 @@
 # HTMLPurifier - Laravel 5 package
 
+[![Latest Stable Version](https://poser.pugx.org/alexusmai/laravel-purifier/v/stable)](https://packagist.org/packages/alexusmai/laravel-purifier)
+[![Total Downloads](https://poser.pugx.org/alexusmai/laravel-purifier/downloads)](https://packagist.org/packages/alexusmai/laravel-purifier)
+[![Latest Unstable Version](https://poser.pugx.org/alexusmai/laravel-purifier/v/unstable)](https://packagist.org/packages/alexusmai/laravel-purifier)
+[![License](https://poser.pugx.org/alexusmai/laravel-purifier/license)](https://packagist.org/packages/alexusmai/laravel-purifier)
 
 
 HTML Purifier is a standards-compliant HTML filter library written in PHP.
