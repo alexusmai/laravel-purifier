@@ -2,9 +2,9 @@
 
 namespace Alexusmai\LaravelPurifier;
 
-use Log;
 use File;
 use Illuminate\Config\Repository;
+use Log;
 
 class Purifier
 {
@@ -28,7 +28,7 @@ class Purifier
         // set cache dir
         $cacheDir = config('purifier.basic')['Cache.SerializerPath'];
 
-        if (!File::isDirectory($cacheDir)){
+        if (! File::isDirectory($cacheDir)) {
             File::makeDirectory($cacheDir, config('purifier.basic')['Cache.SerializerPermissions']);
         }
 
@@ -37,35 +37,37 @@ class Purifier
 
     /**
      * Load settings and clean
-     * @param string $text
+     *
+     * @param string            $text
      * @param null|string|array $customSettings
+     *
      * @return array|string
      * @throws \Exception
      */
     public function clean($text, $customSettings = null)
     {
         // if custom settings
-        if ($customSettings){
+        if ($customSettings) {
 
             // dynamic settings
-            if (is_array($customSettings)){
+            if (is_array($customSettings)) {
 
                 // load dynamic settings
                 $this->settings->loadArray($customSettings);
 
-            }else{
+            } else {
 
                 // config setting name
-                if ( config('purifier.'.$customSettings, null) ){
+                if (config('purifier.' . $customSettings, null)) {
                     // load custom settings
-                    $this->settings->loadArray( config('purifier.'.$customSettings) );
+                    $this->settings->loadArray(config('purifier.' . $customSettings));
 
-                }else{
+                } else {
                     throw new \Exception('This configuration can\'t be found!');
                 }
 
             }
-        }else{
+        } else {
             // load default settings
             $this->settings->loadArray(config('purifier.default'));
         }
@@ -76,11 +78,11 @@ class Purifier
         // if it's array
         if (is_array($text)) {
 
-            return array_map(function ($item) use($purifier) {
+            return array_map(function ($item) use ($purifier) {
                 return $purifier->purify($item);
             }, $text);
 
-        }else{
+        } else {
 
             return $purifier->purify($text);
         }

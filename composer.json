@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.6.4",
-        "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
+        "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
         "ezyang/htmlpurifier": "4.8.*"
     },
     "autoload": {
@@ -19,6 +19,16 @@
             "Alexusmai\\LaravelPurifier\\": "src/"
         },
         "files": ["src/helper.php"]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Alexusmai\\LaravelPurifier\\LaravelPurifierServiceProvider"
+            ],
+            "aliases": {
+                "Purifier": "Alexusmai\\LaravelPurifier\\Facades\\PurifierFacade"
+            }
+        }
     },
     "minimum-stability": "dev"
 }
