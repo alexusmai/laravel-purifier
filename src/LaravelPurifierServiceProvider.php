@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 
 class LaravelPurifierServiceProvider extends ServiceProvider
 {
+
     /**
      * Register bindings in the container.
      *
@@ -26,7 +27,7 @@ class LaravelPurifierServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/purifier.php' => config_path('purifier.php'),
+            __DIR__ . '/../config/purifier.php' => config_path('purifier.php'),
         ]);
     }
 }
