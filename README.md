@@ -18,13 +18,13 @@ Composer
 composer require alexusmai/laravel-purifier
 ```
 
-Add service provider to config/app.php
+If you have Laravel 5.4 or earlier version, then add service provider to config/app.php and
 
 ``` php
 Alexusmai\LaravelPurifier\LaravelPurifierServiceProvider::class,
 ```
 
-And add alias
+add alias.
 
 ``` php
 'Purifier' => Alexusmai\LaravelPurifier\Facades\PurifierFacade::class,
